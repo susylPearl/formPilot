@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "FormPilot – Your Smart AI Form Assistant",
+  "version": "1.0.0",
+  "description": "Your Smart AI Form Assistant - Automatically detects and fills web forms using intelligent semantic matching",
+  "permissions": ["activeTab", "storage", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "privacy_policy": "https://github.com/yourusername/formpilot/blob/main/PRIVACY_POLICY.md",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
