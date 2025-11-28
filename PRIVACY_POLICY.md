@@ -1,6 +1,6 @@
 # Privacy Policy for FormPilot – Your Smart AI Form Assistant
 
-**Last Updated**: December 2024
+**Last Updated**: November 2025
 
 ## Introduction
 
