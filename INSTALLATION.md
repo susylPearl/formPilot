@@ -31,24 +31,6 @@
 3. Select the `manifest.json` file from this directory
 4. The extension will be loaded temporarily (reload after browser restart)
 
-## Icon Setup (Optional)
-
-The extension references icon files that need to be created:
-
-1. Create three PNG images:
-
-   - `icons/icon16.png` (16x16 pixels)
-   - `icons/icon48.png` (48x48 pixels)
-   - `icons/icon128.png` (128x128 pixels)
-
-2. You can:
-
-   - Use an online icon generator (e.g., favicon-generator.org)
-   - Create simple icons with any image editor
-   - Use placeholder images for testing
-
-3. The extension will work without icons, but Chrome may show warnings.
-
 ## Verification
 
 After installation:
@@ -65,12 +47,6 @@ After installation:
 - Make sure you selected the correct folder (the one containing `manifest.json`)
 - Check that Developer Mode is enabled
 - Look for error messages in the extensions page
-
-**Icons missing?**
-
-- This is normal if you haven't created icon files yet
-- The extension will still function
-- Create the icon files to remove warnings
 
 **Permission errors?**
 
