@@ -150,6 +150,6 @@ FormPilot uses the **minimum permissions** necessary for its functionality.
 
 ## Questions or Concerns?
 
-If you have questions about any permission or how your data is handled, please review the source code or contact the development team.
+If you have questions about any permission or how your data is handled, please review the source code or contact the development team (sushilpearl13@gmail.com).
 
-**Last Updated**: 2024
+**Last Updated**: 2025
