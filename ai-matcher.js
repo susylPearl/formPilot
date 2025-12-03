@@ -9,6 +9,17 @@ class AIMatcher {
     this.useAI = true; // Toggle to enable/disable AI
   }
 
+  // Load model from local bundle (REQUIRED for Chrome Web Store compliance)
+  // Model files are bundled in libs/use_model/
+  // This prevents USE from fetching the model from the internet (not allowed in MV3)
+  async loadLocalUSE(useEncoder) {
+    // Get the local path to the model directory
+    // chrome.runtime.getURL() resolves to chrome-extension://.../libs/use_model/
+    const modelPath = chrome.runtime.getURL("libs/use_model/");
+    const model = await useEncoder.load(modelPath);
+    return model;
+  }
+
   // Load TensorFlow.js and Universal Sentence Encoder
   async loadModel() {
     if (this.loaded || this.loading) {
@@ -28,9 +39,7 @@ class AIMatcher {
         return false;
       }
 
-      // Load Universal Sentence Encoder Lite (smaller, faster)
-      // Check if use is available (from @tensorflow-models/universal-sentence-encoder)
-      // The CDN exposes it as a global 'use' variable
+      // Check if Universal Sentence Encoder is available
       if (
         typeof use === "undefined" &&
         typeof window !== "undefined" &&
@@ -56,10 +65,25 @@ class AIMatcher {
         return false;
       }
 
-      this.model = await useEncoder.load();
-      this.loaded = true;
-      console.log("AI model loaded successfully");
-      return true;
+      // Load model from local bundle - REQUIRED for MV3 compliance
+      // This prevents fetching from the internet
+      try {
+        // Use loadLocalUSE to load from local path
+        // This ensures the model is loaded from chrome-extension://... path, not from internet
+        this.model = await this.loadLocalUSE(useEncoder);
+        this.loaded = true;
+        console.log("AI model loaded successfully from local bundle");
+        return true;
+      } catch (modelError) {
+        console.warn(
+          "AI model loading failed, falling back to rule-based matching:",
+          modelError.message
+        );
+        // Gracefully fall back to rule-based matching
+        this.loaded = false;
+        this.useAI = false;
+        return false;
+      }
     } catch (error) {
       console.warn(
         "Failed to load AI model, falling back to rule-based matching:",

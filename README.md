@@ -12,21 +12,21 @@ FormPilot is your smart AI form assistant that automatically detects and fills w
 - 🔒 **Privacy First**: All data stays local in your browser
 - ⚡ **Lightweight**: No external API calls, runs entirely client-side
 
-## Installation
+## Quick Installation
 
 ### Chrome/Edge
 
-1. Open your browser and navigate to `chrome://extensions/` (or `edge://extensions/`)
-2. Enable "Developer mode" (toggle in top right)
+1. Go to `chrome://extensions/` (or `edge://extensions/`)
+2. Enable "Developer mode" (top right)
 3. Click "Load unpacked"
-4. Select the folder containing this extension
-5. The extension icon should appear in your toolbar
+4. Select this folder
+5. Done! The extension icon appears in your toolbar
 
 ### Firefox
 
-1. Navigate to `about:debugging#/runtime/this-firefox`
+1. Go to `about:debugging#/runtime/this-firefox`
 2. Click "Load Temporary Add-on"
-3. Select the `manifest.json` file
+3. Select `manifest.json`
 
 ## Usage
 
@@ -126,15 +126,21 @@ Fields are filled sequentially:
 
 ```
 .
-├── manifest.json          # Extension configuration
-├── popup.html            # Extension UI
-├── popup.css             # UI styling
-├── popup.js              # UI logic and hybrid matching
-├── ai-matcher.js         # AI-powered semantic matching (TensorFlow.js)
-├── content.js            # Form detection and filling engine
-├── background.js         # Background service worker
-├── icons/                # Extension icons
-└── README.md            # This file
+├── manifest.json              # Extension configuration (MV3)
+├── popup.html                # Extension UI
+├── popup.css                 # UI styling
+├── popup.js                  # UI logic and hybrid matching
+├── ai-matcher.js             # AI-powered semantic matching (TensorFlow.js)
+├── content.js                # Form detection and filling engine
+├── background.js             # Background service worker
+├── libs/                     # Bundled libraries and AI models
+│   ├── tf.min.js            # TensorFlow.js
+│   ├── universal-sentence-encoder.min.js
+│   └── use_model/           # AI model files (bundled locally)
+├── icons/                    # Extension icons
+├── README.md                 # This file
+├── PRIVACY_POLICY.md         # Privacy policy
+└── PERMISSIONS_JUSTIFICATION.md  # Permissions explanation
 ```
 
 ## Technical Details

@@ -1,6 +1,6 @@
 # Privacy Policy for FormPilot – Your Smart AI Form Assistant
 
-**Last Updated**: November 2025
+**Last Updated**: December 2024
 
 ## Introduction
 
@@ -33,6 +33,7 @@ FormPilot collects and stores the following data **locally on your device**:
 ### What We DON'T Do
 
 We **DO NOT**:
+
 - ❌ Send your data to external servers
 - ❌ Share your data with third parties
 - ❌ Track your browsing behavior
@@ -47,6 +48,7 @@ We **DO NOT**:
 ### Client-Side AI
 
 FormPilot uses **TensorFlow.js** and **Universal Sentence Encoder** for semantic matching:
+
 - All AI processing happens **entirely in your browser**
 - No data is sent to external AI services or APIs
 - Model files are loaded from CDN but processing is local
@@ -59,14 +61,17 @@ FormPilot uses **TensorFlow.js** and **Universal Sentence Encoder** for semantic
 FormPilot requires the following permissions:
 
 1. **`activeTab`**: Access the currently active browser tab
+
    - Used only when you explicitly click "Scan Current Page" or "Fill Form"
    - Does not access tabs in the background
 
 2. **`storage`**: Store data locally in your browser
+
    - Used to save your profiles and preferences
    - All data remains on your device
 
 3. **`scripting`**: Inject content scripts into web pages
+
    - Used to detect and fill form fields
    - Only runs when you actively use the extension
 
@@ -78,13 +83,15 @@ For detailed justification of each permission, see [PERMISSIONS_JUSTIFICATION.md
 
 ## Third-Party Services
 
-### CDN Resources
+### Third-Party Libraries
 
-FormPilot loads the following resources from CDNs:
-- **TensorFlow.js**: From `cdn.jsdelivr.net` - for AI functionality
-- **Universal Sentence Encoder**: From `cdn.jsdelivr.net` - for semantic matching
+FormPilot uses the following open-source libraries, all bundled locally:
 
-These are open-source libraries used for local processing only. No data is sent to these CDNs.
+- **TensorFlow.js**: Bundled in extension package - for AI functionality
+- **Universal Sentence Encoder**: Bundled in extension package - for semantic matching
+- **Model Files**: Bundled in extension package - AI model weights
+
+All libraries and model files are included in the extension package. No external resources are loaded at runtime. All processing happens locally in your browser.
 
 ## Data Security
 
@@ -98,6 +105,7 @@ These are open-source libraries used for local processing only. No data is sent 
 ### Your Control
 
 You have full control over your data:
+
 - **View**: Check your saved profiles in the extension popup
 - **Edit**: Modify or delete any profile at any time
 - **Delete**: Clear all data by removing the extension or clearing storage
@@ -110,12 +118,14 @@ FormPilot is not intended for children under 13. We do not knowingly collect per
 ## Changes to This Policy
 
 We may update this Privacy Policy from time to time. We will notify you of any changes by:
+
 - Updating the "Last Updated" date at the top of this policy
 - Posting the new Privacy Policy in the extension repository
 
 ## Your Rights
 
 You have the right to:
+
 - **Access**: View all data stored by the extension
 - **Delete**: Remove all stored data at any time
 - **Control**: Choose what data to save and use
@@ -124,6 +134,7 @@ You have the right to:
 ## Data Deletion
 
 To delete all data stored by FormPilot:
+
 1. Open Chrome Extensions page (`chrome://extensions/`)
 2. Find "FormPilot – Your Smart AI Form Assistant"
 3. Click "Remove" to uninstall the extension
@@ -134,6 +145,7 @@ Alternatively, you can clear individual profiles using the extension's interface
 ## Contact Information
 
 If you have questions about this Privacy Policy or our data practices, please:
+
 - Review the source code in the extension repository
 - Check the [PERMISSIONS_JUSTIFICATION.md](PERMISSIONS_JUSTIFICATION.md) document
 - Contact the development team through the repository
@@ -141,6 +153,7 @@ If you have questions about this Privacy Policy or our data practices, please:
 ## Compliance
 
 This extension complies with:
+
 - **GDPR**: All data processing is local, user-controlled, and transparent
 - **CCPA**: No data is sold or shared with third parties
 - **Chrome Web Store Policies**: Follows all required privacy and security guidelines
@@ -152,4 +165,3 @@ FormPilot is open source. You can review the code to verify our privacy practice
 ---
 
 **Summary**: FormPilot stores your data locally on your device only. We never send your data to external servers, track your browsing, or share your information with third parties. All AI processing happens in your browser. You have full control over your data and can delete it at any time.
-
